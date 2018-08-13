@@ -14,17 +14,17 @@ namespace FizzBuzzMSpec.FizzBuzzKata.Tests
         static int number = 3;
         static FizzBuzz fizzBuzz;
 
-        Establish b = () =>
+        Establish context = () =>
                 fizzBuzz = new FizzBuzz();
 
         //--------------Act--------------------
         static string actual;
-        Because c = () =>
+        Because of = () =>
                 actual = fizzBuzz.FizzBuzzer(number);
 
         //--------------Act--------------------
         static string expected = "FizzWhiz";
-        It Should_Return_Number = () =>
+        It Should_Return_Number = () => 
                 actual.ShouldEqual(expected);
     }
 }

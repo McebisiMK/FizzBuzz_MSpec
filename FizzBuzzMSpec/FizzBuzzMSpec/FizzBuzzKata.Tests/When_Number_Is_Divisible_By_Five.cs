@@ -11,15 +11,15 @@ namespace FizzBuzzMSpec.FizzBuzzKata.Tests
     class When_Number_Is_Divisible_By_Five
     {
         //---------------Arrange---------------
-        static int number = 20;
+        static int number = 10;
         static FizzBuzz fizzBuzz;
 
-        Establish b = () =>
+        Establish context = () =>
                 fizzBuzz = new FizzBuzz();
 
         //---------------Act-------------------
         static string actual;
-        Because c = () =>
+        Because of = () =>
                 actual = fizzBuzz.FizzBuzzer(number);
 
         //---------------Assert----------------

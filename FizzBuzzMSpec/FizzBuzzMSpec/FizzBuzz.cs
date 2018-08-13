@@ -8,13 +8,14 @@ namespace FizzBuzzMSpec
 {
     public class FizzBuzz
     {
+
         public string FizzBuzzer(int number)
         {
             var fizz = DivisibleByThree(number);
             var buzz = DivisibleByFive(number);
-            var prime = GetPrime(number);
             if (NotDivisibleByThreeAndFive(fizz, buzz))
             {
+                var prime = GetPrime(number);
                 if (string.IsNullOrEmpty(prime))
                 {
                     return number.ToString();
@@ -22,11 +23,6 @@ namespace FizzBuzzMSpec
                 return prime;
             }
             return $"{fizz}{buzz}";
-        }
-
-        private bool Divisible(int number, int factor)
-        {
-            return number % factor == 0;
         }
 
         private string DivisibleByFive(int number)
@@ -50,19 +46,23 @@ namespace FizzBuzzMSpec
             }
             return fizz;
         }
-
-
+        
         private string GetPrime(int number)
         {
             var isPrime = Enumerable.Range(1, number)
-                .Where(factor => Divisible(number, factor))
-                .Count()==2;
+                                    .Where(factor => Divisible(number, factor))
+                                    .Count()==2;
 
             if (isPrime)
             {
                 return "Whiz";
             }
             return "";
+        }
+
+        private bool Divisible(int number, int factor)
+        {
+            return number % factor == 0;
         }
 
         private static bool NotDivisibleByThreeAndFive(string fizz, string buzz)

@@ -14,12 +14,12 @@ namespace FizzBuzzMSpec.FizzBuzzKata.Tests
         static int number = 9;
         static FizzBuzz fizzBuzz;
 
-        Establish b = () =>
+        Establish context = () =>
             fizzBuzz = new FizzBuzz();
 
         //----------------Act------------------
-        static string actual;
-        Because c = () =>
+        static string actual;   
+        Because of = () =>
         actual = fizzBuzz.FizzBuzzer(number);
 
         //---------------Assert----------------

@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace FizzBuzzMSpec.FizzBuzzKata.Tests
 {
-    [Subject("Given number is five should return BuzzWhiz")]
+    [Subject("Given number is divisible by both three and five should return BuzzWhiz")]
     class When_Number_Is_Divisible_By_Both_Three_And_Five
     {
         //--------------Arrange-----------------
         static int number = 15;
         static FizzBuzz fizzBuzz;
 
-        Establish b = () =>
+        Establish context = () =>
                 fizzBuzz = new FizzBuzz();
 
-        //--------------Act--------------------
+        //--------------Act-------------------- 
         static string actual;
-        Because c = () =>
+        Because of = () =>
                 actual = fizzBuzz.FizzBuzzer(number);
 
         //--------------Act--------------------
